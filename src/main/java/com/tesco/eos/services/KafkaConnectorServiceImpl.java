@@ -22,14 +22,18 @@ public class KafkaConnectorServiceImpl implements KafkaConnector{
     @Override
     public void stopConnector() {
         //stop and persist the state
+        //TODO: stop and persis the partition state
     }
 
     @Override
     public void resumeConnector() {
+        //TODO: Resume from the existing Connector state
     }
+
 
     @Override
     public ConnectorState getCurrentState() {
+        //TODO: Get the current state
         return null;
     }
 

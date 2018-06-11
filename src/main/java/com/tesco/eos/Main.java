@@ -19,9 +19,6 @@ import java.io.IOException;
 @SpringBootApplication
 @EnableAsync
 public class Main  {
-    public boolean someLibraryMethod() {
-        return true;
-    }
 
     @Autowired
     private Appconfig appconfig;
@@ -43,7 +40,7 @@ public class Main  {
                         .kafkaZookeeperAddress(appconfig.getZooKeeperServers())
                         .couchbaseNodes(appconfig.getCouchbaseServer())
                         .couchbaseBucket(appconfig.getCouchbaseBucket())
-                        //.couchbasePassword(appconfig.getCouchbasePassword())
+                        .couchbasePassword(appconfig.getCouchbasePassword())
                         .dcpEnabled(true);
         CouchbaseKafkaConnector connector = CouchbaseKafkaConnector.create(builder.build());
         return connector;
